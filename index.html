@@ -16,61 +16,96 @@
         </div>
       </nav>
     </header>
-    <div id="welcome-section">
-      <h1>Hi, I'm Kyle</h1>
-      <p>a web developer with experience in large complex systems</p>
-    </div>
-    <div id="about-me">
-      <h1>About Me</h1>
-      <div class="line"></div>
-      <p><strong>Pronouns:</strong> He/They</p>
-      <p><strong>Location: </strong>Chandler, AZ, USA</p>
-      <p>
-        <strong>Education:</strong> BS Chemical Engineering from Georgia Tech
-        (May '21)
-      </p>
-      <p>
-        <strong>Previous Work:</strong> Technical Services Engineer at Epic
-        Systems, before that I worked in the restaurant industry for 3 years as
-        a cook, servers assistant, and curbside lead.
-      </p>
-    </div>
-    <div id="projects">
-      <h1 class="projects-title">Projects</h1>
-      <div class="tiles">
-        <div class="project-tile">
-          <h1>Project1</h1>
-          <div class="line"></div>
-          <p>
-            A
-            <a target="_blank" href="https://github.com/kylebenji/dice-roller"
-              >dice rolling app</a
+    <main>
+      <div id="navbar-buffer"></div>
+      <div id="welcome-section" class="section">
+        <h1>Hi, I'm Kyle</h1>
+        <p>a web developer with experience in large complex systems</p>
+      </div>
+      <div id="about-me" class="section">
+        <h1>About Me</h1>
+        <div class="line"></div>
+        <p><strong>Pronouns:</strong> He/They</p>
+        <p><strong>Location: </strong>Chandler, AZ, USA</p>
+        <p>
+          <strong>Education:</strong> BS Chemical Engineering from Georgia Tech
+          (May '21)
+        </p>
+        <p>
+          <strong>Previous Work:</strong> Technical Services Engineer at Epic
+          Systems, before that I worked in the restaurant industry for 3 years
+          as a cook, servers assistant, and curbside lead.
+        </p>
+        <p>
+          <strong>Key Skills:</strong> 
+          <ul id="skills">
+            <li>Javascript</li>
+            <li>HTML/CSS</li>
+            <li>Data</li>
+            <li>Troubleshooting</li>
+            <li>Data Structures</li>
+            <li>Databases</li>
+            <li>Customer Communication</li>
+          </ul>
+        </p>
+      </div>
+      <div id="projects" class="section">
+        <h1 class="projects-title">Projects</h1>
+        <div class="tiles">
+          <div class="project-tile">
+            <h1>Bankist App</h1>
+            <div class="line"></div>
+            <p>A streamlined <a href="/bankistApp/">banking app</a>. Try it out with user js/1111!</p>
+          </div>
+          <div class="project-tile">
+            <h1>Dice Rolling</h1>
+            <div class="line"></div>
+            <p>
+              A
+              <a href="/diceRoller/"
+                >dice rolling app</a
+              >
+              that can roll dice of any size!
+            </p>
+          </div>
+          <div class="project-tile">
+            <h1>Prep Cook Clicker Game</h1>
+            <div class="line"></div>
+            <p>A <a href="/prepCookClicker/">clicker game</a> where you cut onions and train your abilities!</p>
+          </div>
+          
+          <div class="project-tile">
+            <h1>Pig Game</h1>
+            <div class="line"></div>
+            <p>A <a href="/pigGame/">dice game</a> where you compete against a friend! Rolling a 1 will reset your progress, be careful!</p>
+          </div>
+        </div>
+      </div>
+      <div id="contacts" class="section">
+        <h1>Contact me!</h1>
+        <p>I'd love to hear what you'd like to work together on!</p>
+        <div class="social-icons">
+          <a
+            id="profile-link"
+            target="_blank"
+            href="https://github.com/kylebenji"
             >
-            that can roll dice of any size!
-          </p>
+            <img class="social-icon" src="/icons/github-mark.png" alt="Github icon">
+          </a>
+          <a
+            id="profile-link"
+            target="_blank"
+            href="https://www.linkedin.com/in/kyleduval/"
+            >
+            <img class="social-icon" src="/icons/LI-Logo.png" alt="Github icon">
+          </a>
         </div>
-        <div class="project-tile">
-          <h1>Project2</h1>
-          <div class="line"></div>
-        </div>
-        <div class="project-tile">
-          <h1>Project3</h1>
-          <div class="line"></div>
-        </div>
-        <div class="project-tile">
-          <h1>Project4</h1>
-          <div class="line"></div>
+        <div class="social-links">
+          <p><strong>Email:</strong> kylebduval@gmail.com</p>
+          <p><strong>Phone:</strong> 678-702-7295</p>
         </div>
       </div>
-    </div>
-    <div id="contacts">
-      <h1>Contact me!</h1>
-      <p>I'd love to hear what you'd like to work together on!</p>
-      <div class="social-links">
-        <a id="profile-link" target="_blank" href="https://github.com/kylebenji"
-          >GitHub</a
-        >
-      </div>
-    </div>
+    </main>
+    <script src="diceScript.js"></script>
   </body>
 </html>

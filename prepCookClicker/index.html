@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Clicker Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 id="title">Prep Cook Clicker</h1>
+    <div class="game">
+      <div class="upgrades left">
+        <h2>Upgrades</h2>
+        <nav id="upgrade-select">
+          <button id="click-upgrades" class="selected">Clicks</button>
+          <button id="autoclick-purchases">Autoclick</button>
+          <button id="autoclick-upgrades">Autoclick Upgrades</button>
+          <button id="managers-btn">Managers</button>
+        </nav>
+        <div id="click-strength" class="upgrades-pane"></div>
+        <div id="autoclick" class="hidden upgrades-pane"></div>
+        <div id="auto-up" class="hidden upgrades-pane"></div>
+        <div id="managers" class="hidden upgrades-pane"></div>
+      </div>
+      <div class="right">
+        <h2 id="served">Onions Chopped:</h2>
+        <h2 id="count">0</h2>
+        <button id="serve">Chop Onion</button>
+        <div id="stats">
+          <p id="onion-per-click">Onions per click: 1</p>
+          <p id="onion-per-second">Onions per second: 0</p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

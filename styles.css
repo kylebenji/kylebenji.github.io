@@ -19,16 +19,27 @@
   --color6: #ee8959;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h1 {
   font-size: 3rem;
 }
 
-p {
+p,
+li {
   font-size: 1.2rem;
 }
 
+html {
+  background: linear-gradient(var(--color5), var(--color1), var(--color3));
+}
+
 #navbar {
-  height: 10%px;
+  height: 3rem;
   width: 100%;
   background-color: var(--color1);
   position: fixed;
@@ -41,57 +52,69 @@ p {
 }
 
 .nav-links a {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   margin: 7.5px 20px;
   text-decoration: none;
   color: rgb(230, 230, 230);
 }
 
+.section {
+  height: calc(100vh - 1.5rem);
+  width: 75vw;
+}
+
+#navbar-buffer {
+  height: 1.5rem;
+}
+
 #welcome-section {
   background: linear-gradient(45deg, var(--color2), var(--color3));
-  height: 100vw;
-  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
 }
+
 #welcome-section h1 {
   color: white;
+  padding-bottom: 20px;
 }
+
 #welcome-section p {
   color: var(--color1);
 }
 
 #about-me {
   background-color: var(--color4);
-  height: 100vw;
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(120deg, var(--color3), var(--color4));
+  background: linear-gradient(120deg, var(--color3), 90%, var(--color4));
 }
 
 #about-me h1 {
   margin: 0 auto;
+  padding-top: 20px;
   color: white;
 }
 
 .line {
   border: 2px solid white;
-  width: 80%;
+  width: 50%;
   margin: 10px auto;
 }
 
-#about-me p {
+#about-me p,
+li {
   font-weight: 500;
-  margin: 5px 40px;
+  margin: 5px 15%;
   color: white;
 }
 
+#about-me li {
+  margin-left: 17%;
+}
+
 #projects {
-  height: 100vw;
-  width: 100%;
   background: linear-gradient(160deg, var(--color5), var(--color6));
 }
 
@@ -120,6 +143,7 @@ p {
 .project-tile h1 {
   text-align: center;
   margin: 10px auto;
+  font-size: 2rem;
 }
 
 .project-tile p {
@@ -128,13 +152,12 @@ p {
 }
 
 .project-tile a {
-  color: #287271;
+  color: white;
 }
 
 #contacts {
-  background: linear-gradient(45deg, var(--color2), var(--color3));
-  height: 50vw;
-  width: 100%;
+  background: linear-gradient(225deg, var(--color6), 10%, var(--color3));
+  height: 50vh;
 }
 
 #contacts h1 {
@@ -148,13 +171,21 @@ p {
   text-align: center;
   padding: 10px;
 }
+
 #contacts a {
   color: var(--color4);
 }
 
-.social-links {
+.social-links,
+.social-icons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   font-size: 1.3rem;
+  width: 40%;
+  margin: 30px auto;
+}
+
+.social-icon {
+  height: 50px;
 }
