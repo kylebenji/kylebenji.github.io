@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+:root {
+  --color1: #e76f51;
+  --color2: #264653;
+  --color3: #287271;
+  --color4: #8ab17d;
+  --color5: #efb366;
+  --color6: #ee8959;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+#navbar {
+  height: 10%px;
+  width: 100%;
+  background-color: var(--color1);
+  position: fixed;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+.nav-links a {
+  font-size: 1.5rem;
+  margin: 7.5px 20px;
+  text-decoration: none;
+  color: rgb(230, 230, 230);
+}
+
+#welcome-section {
+  background: linear-gradient(45deg, var(--color2), var(--color3));
+  height: 100vw;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+#welcome-section h1 {
+  color: white;
+}
+#welcome-section p {
+  color: var(--color1);
+}
+
+#about-me {
+  background-color: var(--color4);
+  height: 100vw;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(120deg, var(--color3), var(--color4));
+}
+
+#about-me h1 {
+  margin: 0 auto;
+  color: white;
+}
+
+.line {
+  border: 2px solid white;
+  width: 80%;
+  margin: 10px auto;
+}
+
+#about-me p {
+  font-weight: 500;
+  margin: 5px 40px;
+  color: white;
+}
+
+#projects {
+  height: 100vw;
+  width: 100%;
+  background: linear-gradient(160deg, var(--color5), var(--color6));
+}
+
+.projects-title {
+  text-align: center;
+  font-size: 40px;
+}
+
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+  height: 90%;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.project-tile {
+  height: 40%;
+  width: 40%;
+  background-color: #264653;
+  color: white;
+  border-radius: 5px;
+}
+
+.project-tile h1 {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.project-tile p {
+  margin: 30px;
+  text-align: center;
+}
+
+.project-tile a {
+  color: #287271;
+}
+
+#contacts {
+  background: linear-gradient(45deg, var(--color2), var(--color3));
+  height: 50vw;
+  width: 100%;
+}
+
+#contacts h1 {
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+#contacts p {
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+#contacts a {
+  color: var(--color4);
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
