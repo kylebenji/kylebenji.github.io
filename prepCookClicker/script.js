@@ -1,26 +1,26 @@
 //buttons
-const btnServe = document.querySelector('#serve');
-const btnClickUp = document.querySelector('#click-upgrades');
-const btnAutoPurch = document.querySelector('#autoclick-purchases');
-const btnAutoUp = document.querySelector('#autoclick-upgrades');
-const btnManagers = document.querySelector('#managers-btn');
-const upgButtons = [btnClickUp, btnAutoPurch, btnAutoUp];
-const btnsBuy = document.getElementsByClassName('buy');
+const btnServe = document.querySelector("#serve");
+const btnClickUp = document.querySelector("#click-upgrades");
+const btnAutoPurch = document.querySelector("#autoclick-purchases");
+const btnAutoUp = document.querySelector("#autoclick-upgrades");
+const btnManagers = document.querySelector("#managers-btn");
+const upgButtons = [btnClickUp, btnAutoPurch, btnAutoUp, btnManagers];
+const btnsBuy = document.getElementsByClassName("buy");
 
 //DOM elements
-const count = document.querySelector('#count');
-const clickUpgradesDiv = document.querySelector('#click-strength');
-const autoPurchasesDiv = document.querySelector('#autoclick');
-const autoUpgradesDiv = document.querySelector('#auto-up');
-const managersDiv = document.querySelector('#managers');
+const count = document.querySelector("#count");
+const clickUpgradesDiv = document.querySelector("#click-strength");
+const autoPurchasesDiv = document.querySelector("#autoclick");
+const autoUpgradesDiv = document.querySelector("#auto-up");
+const managersDiv = document.querySelector("#managers");
 const upgradePanes = [
   clickUpgradesDiv,
   autoPurchasesDiv,
   autoUpgradesDiv,
   managersDiv,
 ];
-const onionPerClick = document.querySelector('#onion-per-click');
-const onionPerSecond = document.querySelector('#onion-per-second');
+const onionPerClick = document.querySelector("#onion-per-click");
+const onionPerSecond = document.querySelector("#onion-per-second");
 
 //variables
 let onionChopped = 0;
@@ -30,8 +30,8 @@ const clickUpgradesObj = {
   clickStrIncrease: 0,
   upgrades: {
     paringKnife: {
-      name: 'Paring Knife',
-      description: 'Just a lil knife. Increases click strength by 1',
+      name: "Paring Knife",
+      description: "Just a lil knife. Increases click strength by 1",
       count: 0,
       cost: 10,
       clickIncrease: 1,
@@ -44,15 +44,15 @@ const clickUpgradesObj = {
       clickIncrease: 5,
     },
     knifeTraining: {
-      name: 'Train knife skills',
-      description: 'Chop faster! Increases click strength by 10',
+      name: "Train knife skills",
+      description: "Chop faster! Increases click strength by 10",
       count: 0,
       cost: 500,
       clickIncrease: 10,
     },
     ambidextrous: {
-      name: 'Ambidexterity',
-      description: 'Work with both hands! Increases click strength by 25',
+      name: "Ambidexterity",
+      description: "Work with both hands! Increases click strength by 25",
       count: 0,
       cost: 1000,
       clickIncrease: 25,
@@ -64,7 +64,7 @@ const autoclickObj = {
   onionsPerSec: 0,
   clickers: {
     busboy: {
-      name: 'Grab Busboy',
+      name: "Grab Busboy",
       description:
         "Grab a busboy from the floor to help you chop. Not very fast, but they've got spirit. +1 chops per second",
       count: 0,
@@ -72,15 +72,15 @@ const autoclickObj = {
       perSecIncrease: 1,
     },
     newCook: {
-      name: 'Hire another Cook',
-      description: 'Hire another prep cook. +10 chops per second',
+      name: "Hire another Cook",
+      description: "Hire another prep cook. +10 chops per second",
       count: 0,
       cost: 5000,
       perSecIncrease: 10,
     },
     autochopper: {
-      name: 'Automated Chopper',
-      description: 'Basic autochopper. Loud, but can chop 25 onions a second',
+      name: "Automated Chopper",
+      description: "Basic autochopper. Loud, but can chop 25 onions a second",
       count: 0,
       cost: 25000,
       perSecIncrease: 25,
@@ -91,13 +91,13 @@ const autoclickObj = {
 const managersObj = {
   managers: {
     knifeSharpener: {
-      name: 'Knife Sharpener',
+      name: "Knife Sharpener",
       description:
         "Sharpen your knives regularly! Automatically purchases the Paring knife and Chef's Knife upgrades when they become available",
       owned: false,
       cost: 10000,
-      upgrades: ['paringKnife', 'chefsKnife'],
-      upgradeType: 'clickUpgrades',
+      upgrades: ["paringKnife", "chefsKnife"],
+      upgradeType: "clickUpgrades",
     },
   },
 };
@@ -114,7 +114,7 @@ const initializeUpgrades = function () {
         <button class="buy">Buy</button>
       </div>
       `;
-    clickUpgradesDiv.insertAdjacentHTML('beforeend', clickUpgradehtml);
+    clickUpgradesDiv.insertAdjacentHTML("beforeend", clickUpgradehtml);
   }
   for (const [clicker, data] of Object.entries(autoclickObj.clickers)) {
     let autoClickerDivHTML = `
@@ -126,7 +126,7 @@ const initializeUpgrades = function () {
       <button class="buy">Buy</button>
     </div>
     `;
-    autoPurchasesDiv.insertAdjacentHTML('beforeend', autoClickerDivHTML);
+    autoPurchasesDiv.insertAdjacentHTML("beforeend", autoClickerDivHTML);
   }
   for (const [manager, data] of Object.entries(managersObj.managers)) {
     let managerHTML = `
@@ -137,7 +137,7 @@ const initializeUpgrades = function () {
       <p class="cost">Cost: ${data.cost}</p>
       <button class="buy">Buy</button>
     </div>`;
-    managersDiv.insertAdjacentHTML('beforeend', managerHTML);
+    managersDiv.insertAdjacentHTML("beforeend", managerHTML);
   }
 };
 initializeUpgrades();
@@ -161,20 +161,20 @@ const decrementOnions = function (cost) {
 const showUpgradePane = function (selPane) {
   for (const [i, pane] of upgradePanes.entries()) {
     if (pane === selPane) {
-      pane.classList.remove('hidden');
-      upgButtons[i].classList.add('selected');
+      pane.classList.remove("hidden");
+      upgButtons[i].classList.add("selected");
     } else {
-      pane.classList.add('hidden');
-      upgButtons[i].classList.remove('selected');
+      pane.classList.add("hidden");
+      upgButtons[i].classList.remove("selected");
     }
   }
 };
 
 const updateCostCount = function (upgrade, element) {
   upgrade.count++;
-  element.querySelector('.count').textContent = `Count: ${upgrade.count}`;
+  element.querySelector(".count").textContent = `Count: ${upgrade.count}`;
   upgrade.cost = Math.floor(upgrade.cost * 1.2);
-  element.querySelector('.cost').textContent = `Cost: ${upgrade.cost}`;
+  element.querySelector(".cost").textContent = `Cost: ${upgrade.cost}`;
 };
 
 const updatePerClick = function () {
@@ -215,18 +215,18 @@ const buyManager = function (upgrade, element) {
   if (onionChopped >= upgrade.cost && !upgrade.owned) {
     decrementOnions(upgrade.cost);
     upgrade.owned = true;
-    element.querySelector('.owned').textContent = `Owned: ${upgrade.owned}`;
+    element.querySelector(".owned").textContent = `Owned: ${upgrade.owned}`;
   }
 };
 
 const buyUpgrade = function (element) {
   let parent = this.parentElement;
   let upgrade = parent.id;
-  if (parent.classList.contains('click-strength-upgrade')) {
+  if (parent.classList.contains("click-strength-upgrade")) {
     buyClickStrengthUpgrade(upgrade, parent);
-  } else if (parent.classList.contains('autoclicker')) {
+  } else if (parent.classList.contains("autoclicker")) {
     buyAutoclicker(upgrade, parent);
-  } else if (parent.classList.contains('manager')) {
+  } else if (parent.classList.contains("manager")) {
     buyManager(upgrade, parent);
   }
 };
@@ -244,7 +244,7 @@ const managerHandler = function () {
   for (const [manager, data] of Object.entries(managersObj.managers)) {
     if (data.owned) {
       for (const upgrade of data.upgrades) {
-        if (data.upgradeType === 'clickUpgrades') {
+        if (data.upgradeType === "clickUpgrades") {
           while (clickUpgradesObj.upgrades[upgrade].cost < onionChopped) {
             buyClickStrengthUpgrade(upgrade);
           }
@@ -257,19 +257,19 @@ const managerHandler = function () {
 const managerInterval = setInterval(managerHandler, 1000);
 
 //event listeners
-btnServe.addEventListener('click', chopOnion);
-btnClickUp.addEventListener('click', function () {
+btnServe.addEventListener("click", chopOnion);
+btnClickUp.addEventListener("click", function () {
   showUpgradePane(clickUpgradesDiv);
 });
-btnAutoPurch.addEventListener('click', function () {
+btnAutoPurch.addEventListener("click", function () {
   showUpgradePane(autoPurchasesDiv);
 });
-btnAutoUp.addEventListener('click', function () {
+btnAutoUp.addEventListener("click", function () {
   showUpgradePane(autoUpgradesDiv);
 });
-btnManagers.addEventListener('click', function () {
+btnManagers.addEventListener("click", function () {
   showUpgradePane(managersDiv);
 });
 Array.from(btnsBuy).forEach(function (element) {
-  element.addEventListener('click', buyUpgrade);
+  element.addEventListener("click", buyUpgrade);
 });
