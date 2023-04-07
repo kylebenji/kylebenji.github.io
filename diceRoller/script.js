@@ -84,7 +84,8 @@ function printDetails(rollsActual) {
   details.textContent = out;
 }
 
-btnRoll.addEventListener("click", function () {
+btnRoll.addEventListener("click", function (e) {
+  e.preventDefault();
   let rollInput = input.value.replace(/\s+/g, ""); //get value from input and trim whitespace
   printout.classList.add("hidden");
   details.classList.add("hidden");
