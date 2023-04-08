@@ -42,7 +42,6 @@ html {
   height: 3rem;
   width: 100%;
   background-color: var(--color1);
-  position: fixed;
 }
 
 .nav-links {
@@ -58,14 +57,19 @@ html {
   color: rgb(230, 230, 230);
 }
 
+#navbar.sticky {
+  position: fixed;
+  opacity: 95%;
+}
+
 .section {
   height: calc(100vh - 1.5rem);
   width: 75vw;
 }
 
-#navbar-buffer {
+/* #navbar-buffer {
   height: 1.5rem;
-}
+} */
 
 #welcome-section {
   background: linear-gradient(45deg, var(--color2), var(--color3));
