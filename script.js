@@ -25,3 +25,12 @@ const welcomeObserver = new IntersectionObserver(
   welcomeObsOptions
 );
 welcomeObserver.observe(welcomeSection);
+
+//Navigation bar smooth scrolling
+document.querySelector('.nav-links').addEventListener('click', function (e) {
+  e.preventDefault();
+  if (e.target.classList.contains('nav_link')) {
+    let id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
