@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Kyle Duval</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport"_content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -17,14 +17,16 @@
       </nav>
     </header>
     <main>
-      <!-- <div id="navbar-buffer"></div> -->
       <div id="welcome-section" class="section">
-        <h1>Hi, I'm Kyle</h1>
+        <h3>Hi, my name is</h3>
+        <h1>Kyle Duval</h1>
         <p>a web developer with experience in large complex systems</p>
       </div>
       <div id="about-me" class="section">
-        <h1>About Me</h1>
-        <div class="line"></div>
+        <div class="section_title">
+          <h1>About Me</h1>
+          <div class="line"></div>
+        </div>
         <p><strong>Pronouns:</strong> He/They</p>
         <p><strong>Location: </strong>Chandler, AZ, USA</p>
         <p>
@@ -50,17 +52,24 @@
         </p>
       </div>
       <div id="projects" class="section">
-        <h1 class="projects-title">Projects</h1>
-        <div class="tiles">
-          <div class="project-tile">
-            <h1>Bankist App</h1>
-            <div class="line"></div>
-            <p>A streamlined <a href="/bankistApp/">banking app</a>.</p>
-            <p>See full functionality and test users on <a href="https://github.com/kylebenji/bankist-app" target="_blank">GitHub</a>.</p>
+        <div class="section_title">
+          <h1>Things I've been working on</h1>
+          <div class="line"></div> 
+        </div>
+        <div class="projects_content">
+          <div class="project_content_container">
+            <h2 class="project_header">Bankist</h2>
+            <p class="">A streamlined <a href="/bankistApp/">banking app</a> and <a href="/bankistWebsite/">marketing website</a><br>example.</p>
+            <p class="small">See full functionality and test users on <a href="https://github.com/kylebenji/bankist-app" target="_blank">GitHub</a>.</p>
+            <p class="small">Design by Jonas Schmedtmann, Javascript by me. Created as part of <a href="https://www.udemy.com/course/the-complete-javascript-course/" target="_blank">course</a> on Udemy</p>
           </div>
-          <div class="project-tile">
-            <h1>Dice Rolling</h1>
-            <div class="line"></div>
+          <div class="project_content_container">
+            <h2>Pig Game</h2>
+            <p>A <a href="/pigGame/">dice game</a> where you compete against a friend! <br>Rolling a 1 will reset your progress, be careful!</p>
+            <p class="small">Design by Jonas Schmedtmann, Javascript by me. Created as part of <a href="https://www.udemy.com/course/the-complete-javascript-course/" target="_blank">course</a> on Udemy</p>
+          </div>
+          <div class="project_content_container">
+            <h2>Dice Rolling</h2>
             <p>
               A
               <a href="/diceRoller/"
@@ -69,21 +78,18 @@
               that can roll dice of any size!
             </p>
           </div>
-          <div class="project-tile">
-            <h1>Prep Cook Clicker Game</h1>
-            <div class="line"></div>
-            <p>A <a href="/prepCookClicker/">clicker game</a> where you cut onions and train your abilities!</p>
+          <div class="project_content_container">
+            <h2>Prep Cook Clicker Game</h2>
+            <p>A basic <a href="/prepCookClicker/">clicker game</a> where you cut onions and train your abilities!</p>
           </div>
           
-          <div class="project-tile">
-            <h1>Pig Game</h1>
-            <div class="line"></div>
-            <p>A <a href="/pigGame/">dice game</a> where you compete against a friend! Rolling a 1 will reset your progress, be careful!</p>
-          </div>
         </div>
       </div>
       <div id="contacts" class="section">
-        <h1>Contact me!</h1>
+        <div class="section_title">
+          <h1>Contact me!</h1>
+          <div class="line"></div>
+        </div>
         <p>I'd love to hear what you'd like to work together on!</p>
         <div class="social-icons">
           <a
@@ -91,7 +97,7 @@
             target="_blank"
             href="https://github.com/kylebenji"
             >
-            <img class="social-icon" src="/icons/github-mark.png" alt="Github icon">
+            <img class="social-icon" src="/icons/github-mark-white.png" alt="Github icon">
           </a>
           <a
             id="profile-link"

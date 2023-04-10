@@ -11,12 +11,16 @@
 }
 
 :root {
-  --color1: #e76f51;
-  --color2: #264653;
-  --color3: #287271;
-  --color4: #8ab17d;
-  --color5: #efb366;
-  --color6: #ee8959;
+  --background_color: #1e1e1e;
+
+  --text_color1: #acacac;
+  --text_color_highlight1: #9872a2;
+  --text_color_highlight2: #6089b4;
+
+  --color1: #8080ff;
+  --color2: #408080;
+  --color3: #4545454f;
+  --text_color1_translucent: #acacaca6;
 }
 
 main {
@@ -27,21 +31,61 @@ main {
 
 h1 {
   font-size: 3rem;
+  color: var(--text_color_highlight1);
+  padding: 10px 0;
+}
+
+h2,
+h3 {
+  color: var(--text_color_highlight2);
 }
 
 p,
 li {
   font-size: 1.2rem;
+  color: var(--text_color1);
+}
+
+a {
+  color: var(--color1);
+}
+
+strong {
+  color: var(--color2);
 }
 
 html {
-  background: linear-gradient(var(--color5), var(--color1), var(--color3));
+  background: var(--background_color);
+}
+
+.small {
+  font-size: 0.7rem;
+}
+
+.section_title {
+  padding-left: 10%;
+}
+
+.section_title h1 {
+  text-align: left;
+}
+
+.section_title .line {
+  margin-left: 0;
+  width: 90%;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    var(--text_color1_translucent),
+    var(--background_color)
+  );
+  height: 5px;
 }
 
 #navbar {
   height: 3rem;
   width: 100%;
-  background-color: var(--color1);
+  background-color: var(--color3);
 }
 
 .nav-links {
@@ -54,7 +98,6 @@ html {
   font-size: 1.5em;
   margin: 7.5px 20px;
   text-decoration: none;
-  color: rgb(230, 230, 230);
 }
 
 #navbar.sticky {
@@ -64,45 +107,33 @@ html {
 
 .section {
   height: calc(100vh - 1.5rem);
-  width: 75vw;
+  width: 60vw;
 }
 
-/* #navbar-buffer {
-  height: 1.5rem;
-} */
-
 #welcome-section {
-  background: linear-gradient(45deg, var(--color2), var(--color3));
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: center;
 }
 
 #welcome-section h1 {
-  color: white;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
+  font-size: 6rem;
 }
 
-#welcome-section p {
-  color: var(--color1);
+#descriptors {
+  opacity: 75%;
 }
 
 #about-me {
-  background-color: var(--color4);
   display: flex;
   flex-direction: column;
-  background: linear-gradient(120deg, var(--color3), 90%, var(--color4));
-}
-
-#about-me h1 {
-  margin: 0 auto;
-  padding-top: 20px;
-  color: white;
+  justify-content: center;
 }
 
 .line {
-  border: 2px solid white;
+  border: 2px solid var(--text_color1);
   width: 50%;
   margin: 10px auto;
 }
@@ -111,7 +142,7 @@ html {
 li {
   font-weight: 500;
   margin: 5px 15%;
-  color: white;
+  color: var(--text_color1);
 }
 
 #about-me li {
@@ -119,65 +150,43 @@ li {
 }
 
 #projects {
-  background: linear-gradient(160deg, var(--color5), var(--color6));
+  height: 150vh;
 }
 
-.projects-title {
-  text-align: center;
-  font-size: 40px;
-}
-
-.tiles {
-  display: flex;
-  flex-wrap: wrap;
-  height: 90%;
+.projects_content {
+  height: 95%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.project-tile {
-  height: 40%;
-  width: 40%;
-  background-color: #264653;
-  color: white;
-  border-radius: 5px;
+.project_content_container {
+  width: 50%;
+  background-color: var(--color3);
+  border-radius: 10px;
+  height: 12rem;
 }
 
-.project-tile h1 {
+.project_content_container h2 {
   text-align: center;
   margin: 10px auto;
   font-size: 2rem;
 }
 
-.project-tile p {
-  margin: 30px;
+.project_content_container p {
+  margin: 10px;
   text-align: center;
-}
-
-.project-tile a {
-  color: white;
 }
 
 #contacts {
-  background: linear-gradient(225deg, var(--color6), 10%, var(--color3));
   height: 50vh;
 }
 
-#contacts h1 {
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
 #contacts p {
-  color: white;
   text-align: center;
   padding: 10px;
-}
-
-#contacts a {
-  color: var(--color4);
 }
 
 .social-links,
@@ -186,7 +195,7 @@ li {
   align-items: center;
   justify-content: space-evenly;
   font-size: 1.3rem;
-  width: 40%;
+  width: 60%;
   margin: 30px auto;
 }
 
