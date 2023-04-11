@@ -67,7 +67,13 @@ function rollDice(rollIn) {
 }
 
 function printRolls(rollsActual) {
-  let out = `You rolled a ${rollsActual[0]}!!`;
+  let roll = rollsActual[0];
+  let out;
+  if (isNaN(roll)) {
+    out = `Invalid Roll Expression`;
+  } else {
+    out = `You rolled a ${Math.trunc(roll)}!!`;
+  }
   printout.classList.remove("hidden");
   print.textContent = out;
   printDetails(rollsActual);
