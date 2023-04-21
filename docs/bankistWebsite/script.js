@@ -190,33 +190,33 @@ const sectionOnScroll = function () {
 };
 sectionOnScroll();
 
-// //lazy loading images
-// const imgLoad = function () {
-//   const revealImages = function (entries, observer) {
-//     const [entry] = entries;
-//     if (!entry.isIntersecting) return;
-//     const element = entry.target;
-//     element.src = element.dataset.src;
+//lazy loading images
+const imgLoad = function () {
+  const revealImages = function (entries, observer) {
+    const [entry] = entries;
+    if (!entry.isIntersecting) return;
+    const element = entry.target;
+    element.src = element.dataset.src;
 
-//     element.addEventListener('load', function () {
-//       element.classList.remove('lazy-img');
-//     });
-//     observer.unobserve(element);
-//   };
+    element.addEventListener('load', function () {
+      element.classList.remove('lazy-img');
+    });
+    observer.unobserve(element);
+  };
 
-//   const imgOptions = {
-//     root: null,
-//     threshold: 0,
-//     rootMargin: '200px',
-//   };
+  const imgOptions = {
+    root: null,
+    threshold: 0,
+    rootMargin: '200px',
+  };
 
-//   const imgObserver = new IntersectionObserver(revealImages, imgOptions);
+  const imgObserver = new IntersectionObserver(revealImages, imgOptions);
 
-//   imgTargets.forEach(function (image) {
-//     imgObserver.observe(image);
-//   });
-// };
-// imgLoad();
+  imgTargets.forEach(function (image) {
+    imgObserver.observe(image);
+  });
+};
+imgLoad();
 
 //Slider
 //putting slides next to each other
