@@ -48,7 +48,7 @@ const modalFunc = function () {
     overlay.classList.add('hidden');
   };
 
-  btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
+  btnsOpenModal.forEach((btn) => btn.addEventListener('click', openModal));
 
   btnCloseModal.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
@@ -109,11 +109,13 @@ const opTabs = function () {
 
     //activate button
     if (!clicked) return;
-    tabs.forEach(t => t.classList.remove('operations__tab--active'));
+    tabs.forEach((t) => t.classList.remove('operations__tab--active'));
     clicked.classList.add('operations__tab--active');
 
     //activate tab
-    tabsContent.forEach(t => t.classList.remove('operations__content--active'));
+    tabsContent.forEach((t) =>
+      t.classList.remove('operations__content--active')
+    );
     document
       .querySelector(`.operations__content--${clicked.dataset.tab}`)
       .classList.add('operations__content--active');
@@ -130,7 +132,7 @@ const navHover = function () {
       const siblings = nav.querySelectorAll('.nav__link');
       const logo = nav.querySelector('img');
 
-      siblings.forEach(el => {
+      siblings.forEach((el) => {
         if (el !== link) el.style.opacity = opacity;
       });
 
@@ -188,33 +190,33 @@ const sectionOnScroll = function () {
 };
 sectionOnScroll();
 
-//lazy loading images
-const imgLoad = function () {
-  const revealImages = function (entries, observer) {
-    const [entry] = entries;
-    if (!entry.isIntersecting) return;
-    const element = entry.target;
-    element.src = element.dataset.src;
+// //lazy loading images
+// const imgLoad = function () {
+//   const revealImages = function (entries, observer) {
+//     const [entry] = entries;
+//     if (!entry.isIntersecting) return;
+//     const element = entry.target;
+//     element.src = element.dataset.src;
 
-    element.addEventListener('load', function () {
-      element.classList.remove('lazy-img');
-    });
-    observer.unobserve(element);
-  };
+//     element.addEventListener('load', function () {
+//       element.classList.remove('lazy-img');
+//     });
+//     observer.unobserve(element);
+//   };
 
-  const imgOptions = {
-    root: null,
-    threshold: 0,
-    rootMargin: '200px',
-  };
+//   const imgOptions = {
+//     root: null,
+//     threshold: 0,
+//     rootMargin: '200px',
+//   };
 
-  const imgObserver = new IntersectionObserver(revealImages, imgOptions);
+//   const imgObserver = new IntersectionObserver(revealImages, imgOptions);
 
-  imgTargets.forEach(function (image) {
-    imgObserver.observe(image);
-  });
-};
-imgLoad();
+//   imgTargets.forEach(function (image) {
+//     imgObserver.observe(image);
+//   });
+// };
+// imgLoad();
 
 //Slider
 //putting slides next to each other
