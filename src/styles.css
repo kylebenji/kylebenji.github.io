@@ -4,12 +4,6 @@
   font-family: sans-serif;
 }
 
-@media (max-width: 600px) {
-  html {
-    font-size: 70%;
-  }
-}
-
 :root {
   --background_color: #1e1e1e;
 
@@ -111,8 +105,8 @@ html {
 }
 
 .section {
-  height: calc(100vh - 1.5rem);
-  width: 60vw;
+  height: calc(70rem - 1.5rem);
+  width: 70vw;
 }
 
 #welcome-section {
@@ -166,7 +160,7 @@ li {
 }
 
 #projects {
-  height: 200vh;
+  height: fit-content;
 }
 
 .projects_content {
@@ -183,13 +177,14 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .project_content_container {
   width: 75%;
   background-color: var(--color3);
   border-radius: 10px;
-  height: 12rem;
+  height: fit-content;
 }
 
 .project_content_container h2 {
@@ -215,17 +210,36 @@ li {
 }
 
 .image-border {
-  position: relative;
+  /* position: relative; */
   padding: 3px;
   padding-bottom: 0;
   background: linear-gradient(270deg, rgb(255, 63, 63), 25%, rgb(14, 139, 197));
   border-radius: 5px;
   margin-right: -10%;
-  margin-left: -5%;
+  margin-left: 5%;
+  margin-top: 20px;
 }
 
 .two-image {
-  margin-right: -20%;
+  display: block;
+  margin-right: -10%;
+  margin-left: 5%;
+  height: 25em;
+}
+
+.two-image .image-border {
+  position: relative;
+  margin: 0;
+}
+
+.image-first {
+  top: 2em;
+  left: 60px;
+}
+
+.image-second {
+  bottom: 6em;
+  left: 0px;
 }
 
 #contacts {
@@ -249,4 +263,35 @@ li {
 
 .social-icon {
   height: 50px;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .project-wrapper {
+    flex-direction: column;
+  }
+
+  .project_content_container {
+    width: 90%;
+  }
+
+  .section {
+    height: calc(70rem - 1.5rem);
+    width: 90vw;
+  }
+
+  .two-image {
+    margin-left: -30px;
+    margin-right: 0;
+  }
+
+  .image-border {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
