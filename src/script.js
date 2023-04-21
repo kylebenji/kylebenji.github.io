@@ -1,6 +1,3 @@
-import 'core-js/stable'; //polyfill
-import 'regenerator-runtime/runtime'; //polyfill
-
 /////////////////////////////////////
 /////////Selectors//////////////
 
