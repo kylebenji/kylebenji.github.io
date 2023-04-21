@@ -90,7 +90,7 @@ btnRoll.addEventListener('click', function () {
     const die = Math.trunc(Math.random() * 6) + 1;
     //display die
     diceEl.classList.remove('hidden');
-    diceEl.src = `dice-${die}.png`;
+    diceEl.src = `./dice-${die}.png`;
     //check for rolled 1, if true switch to other player
     if (die !== 1) {
       //add die to current score
