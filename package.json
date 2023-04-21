@@ -18,11 +18,9 @@
   },
   "homepage": "https://github.com/kylebenji/kylebenji.github.io#readme",
   "devDependencies": {
-    "parcel": "^2.8.3",
     "process": "^0.11.10"
   },
   "dependencies": {
-    "core-js": "^3.30.1",
-    "regenerator-runtime": "^0.13.11"
+    "core-js": "^3.30.1"
   }
 }
