@@ -118,13 +118,14 @@ img:hover {
 
 .section {
   height: fit-content;
-  min-height: calc(70rem - 1.5rem);
+
   width: 70vw;
 }
 
 #welcome-section {
   display: flex;
   align-items: center;
+  min-height: calc(70rem - 1.5rem);
   flex-direction: row;
   justify-content: space-between;
 }
@@ -146,6 +147,7 @@ img:hover {
 #about-me {
   display: flex;
   flex-direction: column;
+  min-height: calc(70rem - 1.5rem);
   justify-content: center;
 }
 
