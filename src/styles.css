@@ -58,6 +58,15 @@ html {
   background: var(--background_color);
 }
 
+img {
+  filter: grayscale(80%);
+  transition: all 0.2s ease-in-out;
+}
+
+img:hover {
+  filter: none;
+}
+
 .small {
   font-size: 0.7rem;
 }
@@ -115,9 +124,9 @@ html {
 
 #welcome-section {
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #welcome-section h1 {
@@ -127,6 +136,11 @@ html {
 
 #descriptors {
   opacity: 75%;
+}
+
+#profile-pic {
+  height: 30rem;
+  border-radius: 10rem;
 }
 
 #about-me {
@@ -205,12 +219,6 @@ li {
 .project-image {
   height: 15em;
   border-radius: 5px;
-  filter: grayscale(80%);
-  transition: all 0.2s ease-in-out;
-}
-
-.project-image:hover {
-  filter: none;
 }
 
 .image-border {
