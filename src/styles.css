@@ -108,7 +108,8 @@ html {
 }
 
 .section {
-  height: calc(70rem - 1.5rem);
+  height: fit-content;
+  min-height: calc(70rem - 1.5rem);
   width: 70vw;
 }
 
@@ -285,7 +286,6 @@ li {
   }
 
   .section {
-    height: calc(70rem - 1.5rem);
     width: 90vw;
   }
 
