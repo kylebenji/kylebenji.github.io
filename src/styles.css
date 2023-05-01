@@ -97,6 +97,7 @@ img:hover {
   background-color: var(--color_navbar);
   position: fixed;
   z-index: 15;
+  top: 0;
   opacity: 90%;
   transition: top 0.2s ease-in-out;
 }
