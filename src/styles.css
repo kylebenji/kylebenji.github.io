@@ -95,8 +95,10 @@ img:hover {
   height: 3rem;
   width: 100%;
   background-color: var(--color_navbar);
-  position: absolute;
+  position: fixed;
   z-index: 15;
+  opacity: 90%;
+  transition: top 0.2s ease-in-out;
 }
 
 .nav-links {
@@ -111,10 +113,10 @@ img:hover {
   text-decoration: none;
 }
 
-#navbar.sticky {
+/* #navbar.sticky {
   position: fixed;
   opacity: 90%;
-}
+} */
 
 .section {
   height: fit-content;

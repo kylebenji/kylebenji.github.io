@@ -13,23 +13,12 @@ const projectButtons = document.querySelectorAll('.project_button');
 //////////////////////////
 ///////Page behavior//////
 //sticky nav bar
-const welcomeObsOptions = {
-  root: null,
-  threshold: 0,
-  rootMargin: `-${nav.getBoundingClientRect().height}px`,
+let prevScrollPos = window.scrollY;
+window.onscroll = function (e) {
+  let currScrollPos = window.scrollY;
+  nav.style.top = currScrollPos < prevScrollPos ? '0px' : '-50px';
+  prevScrollPos = currScrollPos;
 };
-const obsCallback = function (entries, observer) {
-  const entry = entries[0];
-  if (entry.isIntersecting) {
-    nav.classList.remove('sticky');
-  } else nav.classList.add('sticky');
-};
-
-const welcomeObserver = new IntersectionObserver(
-  obsCallback,
-  welcomeObsOptions
-);
-welcomeObserver.observe(welcomeSection);
 
 //Navigation bar smooth scrolling
 document.querySelector('.nav-links').addEventListener('click', function (e) {
