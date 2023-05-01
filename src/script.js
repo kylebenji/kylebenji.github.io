@@ -5,11 +5,6 @@
 const nav = document.querySelector('#navbar');
 const welcomeSection = document.querySelector('#welcome-section');
 
-//Projects
-const projectContainer = document.querySelector('#projects');
-const projectTabs = document.querySelectorAll('.project_content_container');
-const projectButtons = document.querySelectorAll('.project_button');
-
 //////////////////////////
 ///////Page behavior//////
 //sticky nav bar
