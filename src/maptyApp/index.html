@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" type="image/png" href="./icon.png" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
@@ -31,8 +31,14 @@
   </head>
   <body>
     <div class="sidebar">
-      <img src="./logo.png" alt="Logo" class="logo" />
-
+      <img src="logo.png" alt="Logo" class="logo" />
+      <div class="menu">
+        <button class="btn-menu">Menu</button>
+        <div class="menu-content">
+          <button class="center-map">Center Map</button>
+          <button class="reset-workouts">Reset Workouts</button>
+        </div>
+      </div>
       <ul class="workouts">
         <form class="form hidden">
           <div class="form__row">
@@ -88,5 +94,16 @@
     </div>
 
     <div id="map"></div>
+    <div id="modal-confirm" class="hidden">
+      <p id="modal-confirm-message">
+        Are you sure you want to reset all workouts?
+      </p>
+      <button id="btn-modal-close">X</button>
+      <div id="modal-buttons">
+        <button id="btn-modal-confirm">Confirm Reset</button>
+        <button id="btn-modal-cancel">Cancel</button>
+      </div>
+    </div>
+    <div id="overlay" class="hidden"></div>
   </body>
 </html>

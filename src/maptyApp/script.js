@@ -10,6 +10,9 @@ const inputDistance = document.querySelector(".form__input--distance");
 const inputDuration = document.querySelector(".form__input--duration");
 const inputCadence = document.querySelector(".form__input--cadence");
 const inputElevation = document.querySelector(".form__input--elevation");
+const menu = document.querySelector(".menu");
+const modalConfirm = document.querySelector("#modal-confirm");
+const overlay = document.querySelector("#overlay");
 
 class WorkoutStat {
   constructor(emoji, unit) {
@@ -60,7 +63,7 @@ class Workout {
     return `<li class="workout workout--${this.type}" data-id="${this.id}">
           <h2 class="workout__title">${this.description}</h2>
           ${innerHTML}
-          <button class="workout__delete">x</button>
+          <button class="workout__delete">X</button>
         </li>`;
   }
 }
@@ -127,6 +130,17 @@ class Mapty {
       "click",
       this.#panToOrDeleteWorkout.bind(this)
     );
+
+    //modal event handlers
+    menu.addEventListener("click", this.#menuHandler.bind(this));
+    [
+      overlay,
+      modalConfirm.querySelector("#btn-modal-close"),
+      modalConfirm.querySelector("#btn-modal-cancel"),
+    ].forEach((el) => el.addEventListener("click", this.#toggleModal));
+    modalConfirm
+      .querySelector("#btn-modal-confirm")
+      .addEventListener("click", this.#reset);
   }
 
   #getPosition() {
@@ -178,6 +192,25 @@ class Mapty {
       inputElevation.closest(".form__row").classList.add("form__row--hidden");
       inputCadence.closest(".form__row").classList.remove("form__row--hidden");
     }
+  }
+
+  #centerMap() {
+    const initCoords = [this.#workouts[0].coords, this.#workouts[1].coords];
+    const coords = this.#workouts.map((workout) => workout.coords);
+    let bounds = L.latLngBounds(coords);
+    this.#map.flyToBounds(bounds);
+  }
+
+  #toggleModal() {
+    //display confirmation window
+    modalConfirm.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+    //actual reset is handled by event handlers added in constructor
+  }
+
+  #menuHandler(e) {
+    if (e.target.classList.contains("center-map")) this.#centerMap();
+    if (e.target.classList.contains("reset-workouts")) this.#toggleModal();
   }
 
   #newWorkout(e) {
@@ -354,7 +387,7 @@ class Mapty {
     return value;
   }
 
-  reset() {
+  #reset() {
     localStorage.removeItem("workoutsMapty");
     location.reload();
   }
