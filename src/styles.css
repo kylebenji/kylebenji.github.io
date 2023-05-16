@@ -30,6 +30,10 @@ h1 {
   padding: 10px 0;
 }
 
+h2 {
+  font-size: 2.5rem;
+}
+
 h2,
 h3 {
   color: var(--text_color_highlight2);
@@ -75,7 +79,7 @@ img:hover {
   padding-left: 10%;
 }
 
-.section_title h1 {
+.section_title h2 {
   text-align: left;
 }
 
