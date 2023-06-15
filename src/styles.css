@@ -200,7 +200,7 @@ li {
 }
 
 .project-wrapper {
-  width: 75%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -213,6 +213,7 @@ li {
 
 .project_content_container {
   width: 100%;
+  padding: 5px;
   background-color: var(--color3);
   border-radius: 10px;
   height: fit-content;
@@ -251,14 +252,14 @@ li {
   padding-bottom: 0;
   background: linear-gradient(270deg, rgb(255, 63, 63), 25%, rgb(14, 139, 197));
   border-radius: 5px;
-  margin-right: -10%;
+  /* margin-right: -10%; */
   margin-left: 5%;
   margin-top: 20px;
 }
 
 .two-image {
   display: block;
-  margin-right: -7.5%;
+  /* margin-right: -7.5%; */
   margin-left: 2.5%;
   height: 25em;
 }
@@ -279,10 +280,35 @@ li {
 }
 
 #small-projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.project-wrapper-small {
+  width: 20em;
+  height: 20em;
+  margin: 10px;
+}
+
+.project-wrapper-small .project_content_container {
+  height: 100%;
+  width: 100%;
+}
+
+.project-wrapper-small h2 {
+  font-size: 1.5rem;
+}
+
+.project-wrapper-small p {
+  padding: 5px 5%;
+  text-align: center;
+  /* font-size: 0.9rem; */
 }
 
 .inline-project-image {
-  height: 10em;
+  height: 8em;
   float: right;
 }
 
