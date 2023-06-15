@@ -207,8 +207,12 @@ li {
   margin-bottom: 50px;
 }
 
+.project_content-skills-wrapper {
+  width: 100%;
+}
+
 .project_content_container {
-  width: 75%;
+  width: 100%;
   background-color: var(--color3);
   border-radius: 10px;
   height: fit-content;
@@ -223,6 +227,17 @@ li {
 .project_content_container p {
   padding: 5px 5%;
   text-align: center;
+}
+
+.project_content-skills {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  margin-top: 5px;
+}
+
+.project_content-skills li {
+  font-size: 1em;
 }
 
 .project-image {
@@ -263,6 +278,14 @@ li {
   left: 0px;
 }
 
+#small-projects {
+}
+
+.inline-project-image {
+  height: 10em;
+  float: right;
+}
+
 #contacts {
   height: 50vh;
 }
@@ -298,7 +321,7 @@ li {
     margin-bottom: 30px;
   }
 
-  .project_content_container {
+  .project_content-skills-wrapper {
     width: 90%;
   }
 
